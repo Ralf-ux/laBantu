@@ -46,21 +46,21 @@ const realizations: Realization[] = [
     id: 1,
     title: "Réveillon Chic & Or",
     category: "Nouvel An",
-    image: "https://picsum.photos/seed/newyear-table/800/1000",
+    image: "../asserts/IMG-20260328-WA0070.jpg",
     description: "Une table de fête sophistiquée en noir et or pour un passage à l'an nouveau mémorable."
   },
   {
     id: 2,
     title: "Élégance Florale Bleue",
     category: "Décoration de Table",
-    image: "https://picsum.photos/seed/blue-floral/800/1000",
+    image: "../asserts/IMG-20260328-WA0071.jpg",
     description: "Harmonie de bleu et blanc avec des touches naturelles pour une réception raffinée."
   },
   {
     id: 3,
     title: "Anniversaire Passion Rouge",
     category: "Anniversaire",
-    image: "https://picsum.photos/seed/red-birthday/800/1000",
+    image: "../asserts/IMG-20260328-WA0072.jpg",
     description: "Une ambiance romantique et festive avec des roses rouges et des ballons en cœur."
   }
 ];
@@ -113,7 +113,7 @@ const Navbar = ({ onOpenModal }: { onOpenModal: () => void }) => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-nav py-3' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-[#D4AF37] rounded-full flex items-center justify-center text-white font-bold text-xl">L</div>
+          <img src="../asserts/IMG-20260328-WA0068.jpg" alt="Lubantu Event Logo" className="w-10 h-10 rounded-full object-cover" />
           <span className="font-serif text-2xl font-bold tracking-tighter text-[#2C2C2C]">Lubantu <span className="text-[#D4AF37]">Event</span></span>
         </div>
 
@@ -239,9 +239,9 @@ const About = () => (
     <div className="max-w-7xl mx-auto grid md:grid-auto-cols md:grid-cols-2 gap-16 items-center">
       <div className="relative">
         <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-          <img 
-            src="https://picsum.photos/seed/about-team/800/1000" 
-            alt="Notre Équipe" 
+          <img
+            src="../asserts/pexels-leeloothefirst-5038739.jpg"
+            alt="Notre Équipe"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -373,62 +373,43 @@ const Contact = () => (
           <div className="space-y-8 mb-12">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-[#FAF9F6] rounded-2xl flex items-center justify-center text-[#D4AF37]">
-                <Phone size={24} />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
               </div>
               <div>
-                <p className="font-bold text-gray-900">Téléphone</p>
-                <p className="text-gray-600">+243 812 345 678</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-[#FAF9F6] rounded-2xl flex items-center justify-center text-[#D4AF37]">
-                <Mail size={24} />
-              </div>
-              <div>
-                <p className="font-bold text-gray-900">Email</p>
-                <p className="text-gray-600">contact@lubantuevent.com</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-[#FAF9F6] rounded-2xl flex items-center justify-center text-[#D4AF37]">
-                <MapPin size={24} />
-              </div>
-              <div>
-                <p className="font-bold text-gray-900">Adresse</p>
-                <p className="text-gray-600">123 Avenue de la Paix, Kinshasa, RDC</p>
+                <p className="font-bold text-gray-900">TikTok</p>
+                <a href="https://www.tiktok.com/@labantu2021" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#D4AF37] transition-colors">@labantu2021</a>
               </div>
             </div>
           </div>
 
           <div className="flex gap-4">
-            <a href="#" className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-[#D4AF37] hover:text-white transition-all">
-              <Instagram size={20} />
-            </a>
-            <a href="#" className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-[#D4AF37] hover:text-white transition-all">
-              <Facebook size={20} />
+            <a href="https://www.tiktok.com/@labantu2021" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-[#D4AF37] hover:text-white transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
             </a>
           </div>
         </div>
         
         <div className="grid grid-cols-2 gap-4">
-          <img 
-            src="https://picsum.photos/seed/contact1/400/500" 
-            alt="Contact Visual 1" 
+          <img
+            src="../asserts/pexels-dupriez-annick-22208966-6659504.jpg"
+            alt="Contact Visual 1"
             className="rounded-3xl w-full h-full object-cover shadow-lg"
             referrerPolicy="no-referrer"
           />
           <div className="flex flex-col gap-4">
-            <img 
-              src="https://picsum.photos/seed/contact2/400/240" 
-              alt="Contact Visual 2" 
+            <img
+              src="../asserts/pexels-mutecevvil-24023469.jpg"
+              alt="Contact Visual 2"
               className="rounded-3xl w-full h-full object-cover shadow-lg"
               referrerPolicy="no-referrer"
             />
-            <img 
-              src="https://picsum.photos/seed/contact3/400/240" 
-              alt="Contact Visual 3" 
+            <img
+              src="../asserts/pexels-imudruk-11985345.jpg"
+              alt="Contact Visual 3"
               className="rounded-3xl w-full h-full object-cover shadow-lg"
               referrerPolicy="no-referrer"
             />
@@ -443,7 +424,7 @@ const Footer = () => (
   <footer className="bg-[#2C2C2C] text-white py-12 px-6">
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
       <div className="flex items-center gap-2">
-        <div className="w-8 h-8 bg-[#D4AF37] rounded-full flex items-center justify-center text-white font-bold text-lg">L</div>
+        <img src="../asserts/IMG-20260328-WA0068.jpg" alt="Lubantu Event Logo" className="w-8 h-8 rounded-full object-cover" />
         <span className="font-serif text-xl font-bold tracking-tighter">Lubantu <span className="text-[#D4AF37]">Event</span></span>
       </div>
       
@@ -486,26 +467,29 @@ const ReservationModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             </div>
             <h3 className="heading-serif text-3xl mb-4">Réserver maintenant</h3>
             <p className="text-gray-600 mb-8">
-              Contactez-nous directement pour discuter de votre projet et obtenir un devis personnalisé.
+              Contactez-nous directement sur TikTok pour discuter de votre projet et obtenir un devis personnalisé.
             </p>
             
-            <div className="space-y-4">
-              <a 
-                href="https://wa.me/243812345678" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-white py-4 rounded-2xl font-bold hover:opacity-90 transition-all shadow-lg"
-              >
-                <Phone size={20} /> WhatsApp: +243 812 345 678
-              </a>
-              
-              <a 
-                href="mailto:contact@lubantuevent.com" 
-                className="flex items-center justify-center gap-3 w-full bg-[#D4AF37] text-white py-4 rounded-2xl font-bold hover:bg-[#B8962E] transition-all shadow-lg"
-              >
-                <Mail size={20} /> Email: contact@lubantuevent.com
-              </a>
-            </div>
+            <motion.a
+              href="https://www.tiktok.com/@labantu2021"
+              target="_blank"
+              rel="noopener noreferrer"
+              animate={{
+                scale: [1, 1.05, 1],
+                boxShadow: ["0 10px 25px rgba(212, 175, 55, 0.3)", "0 15px 35px rgba(212, 175, 55, 0.5)", "0 10px 25px rgba(212, 175, 55, 0.3)"]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="flex items-center justify-center gap-3 w-full bg-[#D4AF37] text-white py-4 rounded-2xl font-bold hover:bg-[#B8962E] transition-all shadow-lg"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+              Suivez-nous sur TikTok
+            </motion.a>
             
             <p className="mt-8 text-xs text-gray-400 uppercase tracking-widest">
               Lubantu Event — Votre partenaire d'excellence
