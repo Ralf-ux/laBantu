@@ -46,21 +46,21 @@ const realizations: Realization[] = [
     id: 1,
     title: "Réveillon Chic & Or",
     category: "Nouvel An",
-    image: "../asserts/IMG-20260328-WA0070.jpg",
+    image: "https://www.pexels.com/photo/plates-with-napkins-on-table-20013462/",
     description: "Une table de fête sophistiquée en noir et or pour un passage à l'an nouveau mémorable."
   },
   {
     id: 2,
     title: "Élégance Florale Bleue",
     category: "Décoration de Table",
-    image: "../asserts/IMG-20260328-WA0071.jpg",
+    image: "https://www.pexels.com/photo/cutlery-and-tableware-on-elegant-table-setting-in-restaurant-8395302/",
     description: "Harmonie de bleu et blanc avec des touches naturelles pour une réception raffinée."
   },
   {
     id: 3,
     title: "Anniversaire Passion Rouge",
     category: "Anniversaire",
-    image: "../asserts/IMG-20260328-WA0072.jpg",
+    image: "https://www.pexels.com/photo/prepared-tables-in-the-wedding-reception-hall-13045662/",
     description: "Une ambiance romantique et festive avec des roses rouges et des ballons en cœur."
   }
 ];
