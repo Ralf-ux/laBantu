@@ -269,7 +269,7 @@ const About = () => (
     <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
       <div className="relative">
         <div className="aspect-[4/5] rounded-sm overflow-hidden">
-          <img src="/pexels-yankrukov-8866790.jpg" alt="Notre équipe" className="w-full h-full object-cover" />
+          <img src="/pexels-prince-nature-273406283-34389342.jpg" alt="Notre équipe" className="w-full h-full object-cover" />
         </div>
         <div className="absolute -bottom-5 -right-5 w-24 h-24 rounded-full bg-[#C9A84C] flex flex-col items-center justify-center shadow-lg">
           <span className="font-display text-2xl font-semibold text-[#1A1612] leading-none">Since</span>
