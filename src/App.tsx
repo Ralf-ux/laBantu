@@ -110,35 +110,35 @@ const Navbar = ({ onOpenModal }: { onOpenModal: () => void }) => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-nav py-3' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-nav py-3' : 'bg-transparent py-4 md:py-6'}`}>
+      <div className="max-w-7xl mx-auto px-4 md:px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <img src="/IMG-20260328-WA0068.jpg" alt="Labantu Event Logo" className="w-10 h-10 rounded-full object-cover" />
-          <span className="font-serif text-2xl font-bold tracking-tighter text-[#2C2C2C]">Labantu <span className="text-[#D4AF37]">Event</span></span>
+          <img src="/IMG-20260328-WA0068.jpg" alt="Labantu Event Logo" className="w-8 md:w-10 h-8 md:h-10 rounded-full object-cover" />
+          <span className="font-serif text-xl md:text-2xl font-bold tracking-tighter text-[#2C2C2C]">Labantu <span className="text-[#D4AF37]">Event</span></span>
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
               href={link.href} 
-              className="text-sm font-medium hover:text-[#D4AF37] transition-colors"
+              className="text-sm font-medium hover:text-[#D4AF37] transition-colors whitespace-nowrap"
             >
               {link.name}
             </a>
           ))}
           <button 
             onClick={onOpenModal}
-            className="bg-[#D4AF37] text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#B8962E] transition-all shadow-sm cursor-pointer"
+            className="bg-[#D4AF37] text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-[#B8962E] transition-all shadow-sm cursor-pointer whitespace-nowrap"
           >
             Réserver
           </button>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <X /> : <Menu />}
+        <button className="md:hidden p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
@@ -149,14 +149,14 @@ const Navbar = ({ onOpenModal }: { onOpenModal: () => void }) => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-white border-b border-gray-100 p-6 md:hidden flex flex-col gap-4 shadow-xl"
+            className="absolute top-full left-0 right-0 bg-white border-b border-gray-100 px-4 py-6 md:hidden flex flex-col gap-4 shadow-xl"
           >
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
                 href={link.href} 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg font-medium border-b border-gray-50 pb-2"
+                className="text-base font-medium border-b border-gray-50 pb-3"
               >
                 {link.name}
               </a>
@@ -166,7 +166,7 @@ const Navbar = ({ onOpenModal }: { onOpenModal: () => void }) => {
                 setIsMobileMenuOpen(false);
                 onOpenModal();
               }}
-              className="bg-[#D4AF37] text-white py-3 rounded-xl font-bold text-center"
+              className="bg-[#D4AF37] text-white py-3 rounded-xl font-bold text-center mt-2"
             >
               Réserver
             </button>
@@ -178,22 +178,22 @@ const Navbar = ({ onOpenModal }: { onOpenModal: () => void }) => {
 };
 
 const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => (
-  <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+  <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
     <div className="absolute inset-0 z-0">
       <img 
         src="/pexels-prince-nature-273406283-34389342.jpg" 
         alt="Hero Background" 
-        className="w-full h-full object-cover opacity-20"
+        className="w-full h-full object-cover opacity-30"
         referrerPolicy="no-referrer"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-[#FAF9F6]"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/30 to-[#FAF9F6]"></div>
     </div>
     
-    <div className="relative z-10 text-center px-6 max-w-4xl">
+    <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
       <motion.span 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="inline-block text-[#D4AF37] font-semibold tracking-widest uppercase text-sm mb-4"
+        className="inline-block text-[#D4AF37] font-semibold tracking-widest uppercase text-xs sm:text-sm mb-3 md:mb-4"
       >
         L'Excellence Événementielle
       </motion.span>
@@ -201,7 +201,7 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="heading-serif mb-6"
+        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-4 md:mb-6 text-[#2C2C2C]"
       >
         Bienvenue sur <span className="text-[#D4AF37]">Labantu Event</span>
       </motion.h1>
@@ -209,24 +209,24 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed"
+        className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 md:mb-10 leading-relaxed px-2 sm:px-0"
       >
-        Votre partenaire idéal pour l’organisation d’événements inoubliables. 
+        Votre partenaire idéal pour l'organisation d'événements inoubliables. 
         Nous transformons vos idées en expériences mémorables grâce à une équipe professionnelle et créative.
       </motion.p>
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
-        className="flex flex-col sm:flex-row gap-4 justify-center"
+        className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0"
       >
         <button 
           onClick={onOpenModal}
-          className="bg-[#D4AF37] text-white px-10 py-4 rounded-full font-bold hover:bg-[#B8962E] transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+          className="bg-[#D4AF37] text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-bold hover:bg-[#B8962E] transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
         >
           Organiser mon événement <ChevronRight size={18} />
         </button>
-        <a href="#realizations" className="bg-white text-[#2C2C2C] border border-gray-200 px-10 py-4 rounded-full font-bold hover:bg-gray-50 transition-all flex items-center justify-center">
+        <a href="#realizations" className="bg-white text-[#2C2C2C] border border-gray-200 px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-bold hover:bg-gray-50 transition-all flex items-center justify-center gap-2 w-full sm:w-auto">
           Voir nos réalisations
         </a>
       </motion.div>
@@ -236,7 +236,7 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => (
 
 const About = () => (
   <section id="about" className="section-padding bg-white">
-    <div className="max-w-7xl mx-auto grid md:grid-auto-cols md:grid-cols-2 gap-16 items-center">
+    <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 items-center">
       <div className="relative">
         <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
           <img
@@ -245,33 +245,33 @@ const About = () => (
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute -bottom-8 -right-8 bg-[#D4AF37] p-8 rounded-2xl text-white hidden lg:block shadow-xl">
-          <p className="text-4xl font-bold mb-1">10+</p>
-          <p className="text-sm uppercase tracking-wider">Années d'Expérience</p>
+        <div className="absolute -bottom-4 md:-bottom-8 -right-4 md:-right-8 bg-[#D4AF37] p-4 md:p-8 rounded-2xl text-white hidden lg:block shadow-xl">
+          <p className="text-3xl md:text-4xl font-bold mb-1">10+</p>
+          <p className="text-xs md:text-sm uppercase tracking-wider">Années d'Expérience</p>
         </div>
       </div>
       
-      <div>
-        <h2 className="heading-serif mb-8">À propos de nous</h2>
-        <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-          Labantu Event est une plateforme spécialisée dans la planification et la gestion d’événements. 
+      <div className="order-2 md:order-1">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif mb-6 md:mb-8 text-[#2C2C2C]">À propos de nous</h2>
+        <p className="text-base md:text-lg text-gray-600 mb-4 md:mb-6 leading-relaxed">
+          Labantu Event est une plateforme spécialisée dans la planification et la gestion d'événements. 
           Nous accompagnons nos clients de la conception à la réalisation avec une attention particulière aux détails.
         </p>
-        <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-          Notre vision est de devenir une référence dans l’événementiel en Afrique en offrant des services innovants et personnalisés. 
+        <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed">
+          Notre vision est de devenir une référence dans l'événementiel en Afrique en offrant des services innovants et personnalisés. 
           Nous proposons des services complets pour les mariages, anniversaires, événements corporatifs et autres célébrations.
         </p>
         
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 gap-4 md:gap-6">
           {[
-            { icon: <CheckCircle2 className="text-[#D4AF37]" />, text: "Attention aux détails" },
-            { icon: <CheckCircle2 className="text-[#D4AF37]" />, text: "Équipe créative" },
-            { icon: <CheckCircle2 className="text-[#D4AF37]" />, text: "Services sur mesure" },
-            { icon: <CheckCircle2 className="text-[#D4AF37]" />, text: "Gestion complète" },
+            { icon: <CheckCircle2 className="text-[#D4AF37] w-5 h-5 md:w-6 md:h-6" />, text: "Attention aux détails" },
+            { icon: <CheckCircle2 className="text-[#D4AF37] w-5 h-5 md:w-6 md:h-6" />, text: "Équipe créative" },
+            { icon: <CheckCircle2 className="text-[#D4AF37] w-5 h-5 md:w-6 md:h-6" />, text: "Services sur mesure" },
+            { icon: <CheckCircle2 className="text-[#D4AF37] w-5 h-5 md:w-6 md:h-6" />, text: "Gestion complète" },
           ].map((item, i) => (
-            <div key={i} className="flex items-center gap-3">
+            <div key={i} className="flex items-center gap-2 md:gap-3">
               {item.icon}
-              <span className="font-medium text-gray-700">{item.text}</span>
+              <span className="font-medium text-gray-700 text-sm md:text-base">{item.text}</span>
             </div>
           ))}
         </div>
@@ -283,15 +283,15 @@ const About = () => (
 const Realizations = () => (
   <section id="realizations" className="section-padding bg-[#FAF9F6]">
     <div className="max-w-7xl mx-auto">
-      <div className="text-center mb-16">
-        <h2 className="heading-serif mb-4">Nos Réalisations</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+      <div className="text-center mb-10 md:mb-16">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif mb-3 md:mb-4 text-[#2C2C2C]">Nos Réalisations</h2>
+        <p className="text-gray-600 max-w-2xl mx-auto px-4 text-base md:text-lg">
           Découvrez nos créations uniques à travers notre galerie. 
           Chaque événement est une œuvre d'art personnalisée pour nos clients.
         </p>
       </div>
       
-      <div className="grid md:grid-cols-3 gap-8 mb-16">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-16 px-4">
         {realizations.map((item) => (
           <motion.div 
             key={item.id}
@@ -305,9 +305,9 @@ const Realizations = () => (
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
             </div>
-            <div className="p-6">
+            <div className="p-4 md:p-6">
               <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-widest mb-2 block">{item.category}</span>
-              <h3 className="font-serif text-xl mb-2">{item.title}</h3>
+              <h3 className="font-serif text-lg md:text-xl mb-2">{item.title}</h3>
               <p className="text-sm text-gray-500">{item.description}</p>
             </div>
           </motion.div>
@@ -332,20 +332,20 @@ const Realizations = () => (
 const Testimonials = () => (
   <section id="testimonials" className="section-padding bg-white">
     <div className="max-w-7xl mx-auto">
-      <div className="text-center mb-16">
-        <h2 className="heading-serif mb-4">Témoignages</h2>
-        <p className="text-gray-600">Ce que nos clients disent de nous.</p>
+      <div className="text-center mb-10 md:mb-16">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif mb-3 md:mb-4 text-[#2C2C2C]">Témoignages</h2>
+        <p className="text-gray-600 text-base md:text-lg">Ce que nos clients disent de nous.</p>
       </div>
       
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4">
         {testimonials.map((t) => (
-          <div key={t.id} className="bg-[#FAF9F6] p-8 rounded-3xl relative">
+          <div key={t.id} className="bg-[#FAF9F6] p-6 md:p-8 rounded-2xl md:rounded-3xl relative">
             <div className="flex gap-1 mb-4">
               {[...Array(t.rating)].map((_, i) => (
-                <Star key={i} size={16} fill="#D4AF37" color="#D4AF37" />
+                <Star key={i} size={14} md:size={16} fill="#D4AF37" color="#D4AF37" />
               ))}
             </div>
-            <p className="text-gray-700 italic mb-6">"{t.content}"</p>
+            <p className="text-gray-700 italic mb-4 md:mb-6 text-sm md:text-base">"{t.content}"</p>
             <div>
               <p className="font-bold text-[#2C2C2C]">{t.name}</p>
               <p className="text-sm text-gray-500">{t.role}</p>
@@ -360,18 +360,18 @@ const Testimonials = () => (
 const Contact = () => (
   <section id="contact" className="section-padding bg-white">
     <div className="max-w-7xl mx-auto">
-      <div className="grid lg:grid-cols-2 gap-16">
+      <div className="grid lg:grid-cols-2 gap-8 md:gap-16">
         <div>
-          <h2 className="heading-serif mb-8">Contactez-nous</h2>
-          <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-            Contactez-nous pour toute demande d’information ou de devis. 
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif mb-6 md:mb-8 text-[#2C2C2C]">Contactez-nous</h2>
+          <p className="text-base md:text-lg text-gray-600 mb-8 md:mb-10 leading-relaxed">
+            Contactez-nous pour toute demande d'information ou de devis. 
             Notre équipe se fera un plaisir de vous accompagner dans la réalisation de votre événement.
           </p>
           
-          <div className="space-y-8 mb-12">
+          <div className="space-y-6 md:space-y-8 mb-8 md:mb-12">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-[#FAF9F6] rounded-2xl flex items-center justify-center text-[#D4AF37]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <div className="w-10 md:w-12 h-10 md:h-12 bg-[#FAF9F6] rounded-xl md:rounded-2xl flex items-center justify-center text-[#D4AF37] flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
                 </svg>
               </div>
@@ -383,22 +383,22 @@ const Contact = () => (
           </div>
         </div>
         
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3 md:gap-4">
           <img
             src="/pexels-dupriez-annick-22208966-6659504.jpg"
             alt="Contact Visual 1"
-            className="rounded-3xl w-full h-full object-cover shadow-lg"
+            className="rounded-2xl md:rounded-3xl w-full h-40 sm:h-48 md:h-full object-cover shadow-lg"
           />
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3 md:gap-4">
             <img
               src="/pexels-mutecevvil-24023469.jpg"
               alt="Contact Visual 2"
-              className="rounded-3xl w-full h-full object-cover shadow-lg"
+              className="rounded-2xl md:rounded-3xl w-full h-20 sm:h-24 md:flex-1 object-cover shadow-lg"
             />
             <img
               src="/pexels-imudruk-11985345.jpg"
               alt="Contact Visual 3"
-              className="rounded-3xl w-full h-full object-cover shadow-lg"
+              className="rounded-2xl md:rounded-3xl w-full h-20 sm:h-24 md:flex-1 object-cover shadow-lg"
             />
           </div>
         </div>
@@ -408,18 +408,18 @@ const Contact = () => (
 );
 
 const Footer = () => (
-  <footer className="bg-[#2C2C2C] text-white py-12 px-6">
-    <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+  <footer className="bg-[#2C2C2C] text-white py-8 md:py-12 px-4 md:px-6">
+    <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
       <div className="flex items-center gap-2">
         <img src="/IMG-20260328-WA0068.jpg" alt="Labantu Event Logo" className="w-8 h-8 rounded-full object-cover" />
-        <span className="font-serif text-xl font-bold tracking-tighter">Labantu <span className="text-[#D4AF37]">Event</span></span>
+        <span className="font-serif text-lg md:text-xl font-bold tracking-tighter">Labantu <span className="text-[#D4AF37]">Event</span></span>
       </div>
       
-      <div className="text-sm text-gray-400">
+      <div className="text-sm text-gray-400 text-center">
         © 2026 Labantu Event. Tous droits réservés.
       </div>
       
-      <div className="flex gap-6 text-sm font-medium">
+      <div className="flex gap-4 md:gap-6 text-sm font-medium">
         <a href="#home" className="hover:text-[#D4AF37] transition-colors">Home</a>
         <a href="#about" className="hover:text-[#D4AF37] transition-colors">À propos</a>
         <a href="#contact" className="hover:text-[#D4AF37] transition-colors">Contact</a>
@@ -432,7 +432,7 @@ const ReservationModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -444,16 +444,16 @@ const ReservationModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative bg-white rounded-[2rem] p-10 max-w-md w-full shadow-2xl text-center"
+            className="relative bg-white rounded-2xl md:rounded-[2rem] p-6 md:p-10 max-w-md w-full shadow-2xl text-center"
           >
-            <button onClick={onClose} className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer">
-              <X size={24} />
+            <button onClick={onClose} className="absolute top-4 md:top-6 right-4 md:right-6 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer p-1">
+              <X size={20} md:size={24} />
             </button>
-            <div className="w-16 h-16 bg-[#D4AF37]/10 text-[#D4AF37] rounded-full flex items-center justify-center mx-auto mb-6">
-              <Calendar size={32} />
+            <div className="w-12 md:w-16 h-12 md:h-16 bg-[#D4AF37]/10 text-[#D4AF37] rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
+              <Calendar size={24} md:size={32} />
             </div>
-            <h3 className="heading-serif text-3xl mb-4">Réserver maintenant</h3>
-            <p className="text-gray-600 mb-8">
+            <h3 className="text-2xl md:text-3xl font-serif mb-3 md:mb-4 text-[#2C2C2C]">Réserver maintenant</h3>
+            <p className="text-gray-600 mb-6 md:mb-8 text-sm md:text-base">
               Contactez-nous directement sur TikTok pour discuter de votre projet et obtenir un devis personnalisé.
             </p>
             
@@ -470,15 +470,15 @@ const ReservationModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="flex items-center justify-center gap-3 w-full bg-[#D4AF37] text-white py-4 rounded-2xl font-bold hover:bg-[#B8962E] transition-all shadow-lg"
+              className="flex items-center justify-center gap-3 w-full bg-[#D4AF37] text-white py-3 md:py-4 rounded-xl md:rounded-2xl font-bold hover:bg-[#B8962E] transition-all shadow-lg"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.10z"/>
               </svg>
               Suivez-nous sur TikTok
             </motion.a>
             
-            <p className="mt-8 text-xs text-gray-400 uppercase tracking-widest">
+            <p className="mt-6 md:mt-8 text-xs text-gray-400 uppercase tracking-widest">
               Labantu Event — Votre partenaire d'excellence
             </p>
           </motion.div>
