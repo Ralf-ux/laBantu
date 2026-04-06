@@ -1,0 +1,1363 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C96A;
+    --gold-pale: #F5E9C8;
+    --ink: #1A1612;
+    --ink-soft: #2E2820;
+    --ivory: #FAF8F3;
+    --ivory-warm: #F2EDE3;
+    --stone: #8C8278;
+    --font-disp: 'Cormorant Garamond', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .lbt-wrap {
+    font-family: var(--font-body);
+    background: var(--ivory);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  /* ── NAV ── */
+  .lbt-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 32px;
+    background: rgba(250,248,243,0.88);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(201,168,76,0.18);
+  }
+
+  .lbt-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .lbt-logo-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-disp);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+  }
+
+  .lbt-logo-text {
+    font-family: var(--font-disp);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--ink);
+  }
+
+  .lbt-logo-text span {
+    color: var(--gold);
+  }
+
+  .lbt-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .lbt-nav-links a {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--stone);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+  }
+
+  .lbt-nav-links a:hover { color: var(--gold); }
+
+  .lbt-cta-pill {
+    padding: 9px 22px;
+    background: var(--ink);
+    color: var(--gold-light);
+    border: none;
+    border-radius: 100px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+
+  .lbt-cta-pill:hover {
+    background: var(--gold);
+    color: var(--ink);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(201,168,76,0.3);
+  }
+
+  /* ── HERO ── */
+  .lbt-hero {
+    position: relative;
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .lbt-hero-left {
+    padding: 80px 48px 80px 56px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .lbt-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .lbt-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .lbt-hero-title {
+    font-family: var(--font-disp);
+    font-size: clamp(44px, 5vw, 72px);
+    font-weight: 300;
+    line-height: 1.08;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+
+  .lbt-hero-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .lbt-hero-body {
+    font-size: 15px;
+    color: var(--stone);
+    line-height: 1.7;
+    max-width: 360px;
+    margin-bottom: 44px;
+  }
+
+  .lbt-hero-btns {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .lbt-btn-primary {
+    padding: 14px 32px;
+    background: var(--gold);
+    color: var(--ink);
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lbt-btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0);
+    transition: background 0.2s;
+  }
+
+  .lbt-btn-primary:hover::after { background: rgba(255,255,255,0.15); }
+  .lbt-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(201,168,76,0.4); }
+
+  .lbt-btn-ghost {
+    padding: 13px 28px;
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid rgba(44,40,32,0.25);
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .lbt-btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .lbt-hero-right {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+  }
+
+  .lbt-hero-img-stack {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 0;
+  }
+
+  .lbt-hero-img-a {
+    background: linear-gradient(160deg, #3D2B1A 0%, #5C3D22 40%, #7A5230 70%, #9A6940 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lbt-hero-img-b {
+    background: linear-gradient(200deg, #1E2832 0%, #2D3E52 40%, #3E5068 60%, #4A5E78 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Simulated photo texture overlay */
+  .lbt-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(ellipse at 30% 40%, rgba(201,168,76,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
+  }
+
+  /* Decorative gold orb for table setting visual */
+  .lbt-table-scene {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .lbt-plate {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #F5E9C8 30%, #E8C96A 60%, #C9A84C 100%);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.4);
+  }
+
+  .lbt-glass-stem {
+    width: 4px;
+    height: 90px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .lbt-glass-bowl {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50% 50% 0 0;
+    border: 2px solid rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.08);
+  }
+
+  /* Stats bar inside hero */
+  .lbt-stats-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26,22,18,0.85);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 24px;
+    border-top: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .lbt-stat {
+    text-align: center;
+  }
+
+  .lbt-stat-num {
+    font-family: var(--font-disp);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--gold-light);
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .lbt-stat-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── MARQUEE BAND ── */
+  .lbt-marquee {
+    overflow: hidden;
+    background: var(--ink);
+    padding: 14px 0;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .lbt-marquee-track {
+    display: flex;
+    gap: 0;
+    animation: marquee 22s linear infinite;
+    white-space: nowrap;
+  }
+
+  .lbt-marquee-item {
+    font-family: var(--font-disp);
+    font-size: 13px;
+    font-style: italic;
+    color: rgba(201,168,76,0.7);
+    letter-spacing: 1px;
+    padding: 0 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .lbt-marquee-item::after {
+    content: '◆';
+    font-size: 8px;
+    color: var(--gold);
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── ABOUT ── */
+  .lbt-section {
+    padding: 100px 56px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .lbt-section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .lbt-section-title {
+    font-family: var(--font-disp);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+
+  .lbt-section-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .lbt-about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .lbt-about-img-wrap {
+    position: relative;
+  }
+
+  .lbt-about-img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, #3B2A1A 0%, #5A4030 40%, #7A5A42 70%, #C9A84C 100%);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Decorative floral pattern overlay */
+  .lbt-about-img::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 60% at 40% 60%, rgba(201,168,76,0.25) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 70% 30%, rgba(255,255,255,0.08) 0%, transparent 50%);
+  }
+
+  /* Simulated bouquet shapes */
+  .lbt-floral-scene {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .lbt-flower-row {
+    display: flex;
+    gap: 8px;
+  }
+
+  .lbt-flower {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff 30%, #E8C96A 70%);
+    opacity: 0.7;
+    box-shadow: 0 0 12px rgba(232,201,106,0.5);
+  }
+
+  .lbt-flower.sm { width: 13px; height: 13px; opacity: 0.4; }
+  .lbt-flower.red { background: radial-gradient(circle, #FFD0C0 20%, #E05C3A 80%); }
+  .lbt-flower.pink { background: radial-gradient(circle, #FFE0F0 20%, #D46888 80%); }
+  .lbt-flower.wh { background: radial-gradient(circle, #fff 40%, #e8e0d0 80%); opacity: 0.9; }
+
+  .lbt-badge-exp {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(201,168,76,0.4);
+  }
+
+  .lbt-badge-num {
+    font-family: var(--font-disp);
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .lbt-badge-text {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-align: center;
+    margin-top: 2px;
+  }
+
+  .lbt-about-body {
+    font-size: 15px;
+    color: var(--stone);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .lbt-about-feats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .lbt-feat-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px;
+    background: var(--ivory-warm);
+    border-left: 2px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .lbt-feat-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  /* ── GALLERY ── */
+  .lbt-gallery-section {
+    background: var(--ink);
+    padding: 100px 0 0;
+  }
+
+  .lbt-gallery-header {
+    padding: 0 56px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .lbt-gallery-title {
+    font-family: var(--font-disp);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 300;
+    color: var(--ivory);
+    line-height: 1.1;
+  }
+
+  .lbt-gallery-title em { color: var(--gold); font-style: italic; }
+
+  .lbt-gallery-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(201,168,76,0.4);
+    transition: border-color 0.2s;
+    cursor: pointer;
+  }
+
+  .lbt-gallery-link:hover { border-color: var(--gold); }
+
+  .lbt-gallery-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 3px;
+  }
+
+  .lbt-gal-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .lbt-gal-card:first-child {
+    grid-row: span 2;
+  }
+
+  .lbt-gal-img {
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+    position: relative;
+  }
+
+  /* Simulated event photos with color gradients */
+  .lbt-gal-img.event-1 {
+    background: linear-gradient(160deg, #1A1008 0%, #3D2200 30%, #6B3A10 55%, #C9A84C 80%, #F5E9C8 100%);
+    min-height: 480px;
+  }
+
+  .lbt-gal-img.event-2 {
+    background: linear-gradient(145deg, #0A1520 0%, #1E3A56 40%, #3B6B8A 70%, #6BA8C8 100%);
+  }
+
+  .lbt-gal-img.event-3 {
+    background: linear-gradient(170deg, #3D0808 0%, #7A1A1A 40%, #C83232 70%, #E87878 100%);
+  }
+
+  .lbt-gal-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26,22,18,0.9) 0%, rgba(26,22,18,0.3) 40%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+  }
+
+  .lbt-gal-card:hover .lbt-gal-overlay { opacity: 1; }
+  .lbt-gal-card:hover .lbt-gal-img { transform: scale(1.05); }
+
+  .lbt-gal-cat {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .lbt-gal-name {
+    font-family: var(--font-disp);
+    font-size: 22px;
+    font-weight: 400;
+    color: white;
+    line-height: 1.2;
+  }
+
+  /* Decorative elements inside gallery images */
+  .lbt-gal-deco {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lbt-gal-ring {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.3);
+    position: absolute;
+  }
+
+  .lbt-gal-ring.sm { width: 70px; height: 70px; border-color: rgba(201,168,76,0.2); }
+
+  /* ── TESTIMONIALS ── */
+  .lbt-testi-section {
+    background: var(--ivory-warm);
+    padding: 100px 56px;
+  }
+
+  .lbt-testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+
+  .lbt-testi-card {
+    background: var(--ivory);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 2px;
+    padding: 32px;
+    position: relative;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .lbt-testi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(26,22,18,0.08);
+  }
+
+  .lbt-testi-quote {
+    font-family: var(--font-disp);
+    font-size: 52px;
+    line-height: 0.6;
+    color: var(--gold-pale);
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .lbt-testi-text {
+    font-size: 14px;
+    color: var(--stone);
+    line-height: 1.75;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+
+  .lbt-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 16px;
+  }
+
+  .lbt-star {
+    width: 12px;
+    height: 12px;
+    background: var(--gold);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  .lbt-testi-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .lbt-testi-role {
+    font-size: 12px;
+    color: var(--stone);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── CONTACT BAND ── */
+  .lbt-contact-section {
+    background: var(--ink);
+    padding: 80px 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lbt-contact-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 60px solid rgba(201,168,76,0.04);
+  }
+
+  .lbt-contact-title {
+    font-family: var(--font-disp);
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 300;
+    color: var(--ivory);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .lbt-contact-title em { color: var(--gold); font-style: italic; }
+
+  .lbt-contact-body {
+    font-size: 14px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.8;
+    margin-bottom: 40px;
+  }
+
+  .lbt-contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .lbt-contact-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+
+  .lbt-contact-link:hover { color: var(--gold); }
+
+  .lbt-contact-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid rgba(201,168,76,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .lbt-contact-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .lbt-contact-img-box {
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .lbt-contact-img-box:first-child {
+    grid-row: span 2;
+  }
+
+  .lbt-img-sim {
+    width: 100%;
+    height: 100%;
+    min-height: 160px;
+    display: block;
+  }
+
+  .lbt-img-sim.ci1 {
+    background: linear-gradient(160deg, #1E2830 0%, #2A3B4C 40%, #3E5A6A 70%, #5A8290 100%);
+    min-height: 320px;
+  }
+
+  .lbt-img-sim.ci2 {
+    background: linear-gradient(135deg, #2A1E0E 0%, #5C3A1E 50%, #9A6830 100%);
+  }
+
+  .lbt-img-sim.ci3 {
+    background: linear-gradient(135deg, #1A0E1A 0%, #3E1E3E 50%, #7A4A7A 100%);
+  }
+
+  /* ── FOOTER ── */
+  .lbt-footer {
+    background: #0E0C09;
+    padding: 32px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .lbt-footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.3px;
+  }
+
+  .lbt-footer-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .lbt-footer-links a {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .lbt-footer-links a:hover { color: var(--gold); }
+
+  /* ── MODAL ── */
+  .lbt-modal-bg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26,22,18,0.7);
+    z-index: 200;
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lbt-modal-bg.open { display: flex; }
+
+  .lbt-modal {
+    background: var(--ivory);
+    border-radius: 4px;
+    padding: 48px;
+    max-width: 440px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+    animation: modalIn 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+
+  @keyframes modalIn {
+    from { opacity: 0; transform: scale(0.93) translateY(12px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .lbt-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: var(--ivory-warm);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--stone);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .lbt-modal-close:hover { background: var(--gold-pale); }
+
+  .lbt-modal-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-pale), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 26px;
+  }
+
+  .lbt-modal-title {
+    font-family: var(--font-disp);
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .lbt-modal-body {
+    font-size: 14px;
+    color: var(--stone);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .lbt-modal-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 28px;
+    background: var(--ink);
+    color: var(--gold-light);
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+  }
+
+  .lbt-modal-cta:hover {
+    background: var(--gold);
+    color: var(--ink);
+    box-shadow: 0 8px 24px rgba(201,168,76,0.35);
+    transform: translateY(-2px);
+  }
+
+  .lbt-modal-sub {
+    margin-top: 16px;
+    font-size: 11px;
+    color: var(--stone);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .lbt-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .lbt-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .lbt-reveal-delay-1 { transition-delay: 0.1s; }
+  .lbt-reveal-delay-2 { transition-delay: 0.2s; }
+  .lbt-reveal-delay-3 { transition-delay: 0.3s; }
+</style>
+
+<div class="lbt-wrap">
+
+  <!-- NAV -->
+  <nav class="lbt-nav">
+    <div class="lbt-logo">
+      <div class="lbt-logo-mark">L</div>
+      <span class="lbt-logo-text">Labantu <span>Event</span></span>
+    </div>
+    <ul class="lbt-nav-links">
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">À propos</a></li>
+      <li><a href="#">Réalisations</a></li>
+      <li><a href="#">Témoignages</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <button class="lbt-cta-pill" onclick="document.getElementById('modal').classList.add('open')">Réserver</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="lbt-hero">
+    <div class="lbt-hero-left">
+      <div class="lbt-eyebrow">L'excellence événementielle</div>
+      <h1 class="lbt-hero-title">
+        Vos rêves,<br>
+        notre <em>passion</em><br>
+        éternelle
+      </h1>
+      <p class="lbt-hero-body">
+        Labantu Event crée des expériences uniques et inoubliables — mariages, anniversaires, galas d'entreprise — avec une attention absolue aux détails.
+      </p>
+      <div class="lbt-hero-btns">
+        <button class="lbt-btn-primary" onclick="document.getElementById('modal').classList.add('open')">Organiser mon événement</button>
+        <a href="#" class="lbt-btn-ghost">Voir nos réalisations</a>
+      </div>
+    </div>
+
+    <div class="lbt-hero-right">
+      <div class="lbt-hero-img-stack">
+        <div class="lbt-hero-img-a">
+          <div class="lbt-photo-overlay"></div>
+          <div class="lbt-table-scene">
+            <div class="lbt-flower-row">
+              <div class="lbt-flower wh"></div>
+              <div class="lbt-flower sm"></div>
+              <div class="lbt-flower red"></div>
+              <div class="lbt-flower wh sm"></div>
+              <div class="lbt-flower pink"></div>
+            </div>
+            <div class="lbt-flower-row" style="margin-top:8px">
+              <div class="lbt-flower sm"></div>
+              <div class="lbt-flower red"></div>
+              <div class="lbt-flower"></div>
+              <div class="lbt-flower red sm"></div>
+            </div>
+          </div>
+          <!-- Event title overlay -->
+          <div style="position:absolute;bottom:20px;left:24px">
+            <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(201,168,76,0.8);margin-bottom:4px">Mariage</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:white;font-weight:300">Salle de réception</div>
+          </div>
+        </div>
+        <div class="lbt-hero-img-b">
+          <div class="lbt-photo-overlay"></div>
+          <!-- Abstract table setting shapes -->
+          <div style="position:relative;display:flex;align-items:center;gap:20px">
+            <div class="lbt-plate" style="width:56px;height:56px"></div>
+            <div class="lbt-glass-stem">
+              <div class="lbt-glass-bowl"></div>
+            </div>
+            <div class="lbt-plate" style="width:40px;height:40px;opacity:0.6"></div>
+          </div>
+          <div style="position:absolute;bottom:20px;left:24px">
+            <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(201,168,76,0.8);margin-bottom:4px">Gala</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:white;font-weight:300">Décoration de table</div>
+          </div>
+        </div>
+      </div>
+      <!-- Stats overlay -->
+      <div class="lbt-stats-bar">
+        <div class="lbt-stat">
+          <span class="lbt-stat-num">10+</span>
+          <span class="lbt-stat-label">Années</span>
+        </div>
+        <div class="lbt-stat">
+          <span class="lbt-stat-num">500+</span>
+          <span class="lbt-stat-label">Événements</span>
+        </div>
+        <div class="lbt-stat">
+          <span class="lbt-stat-num">100%</span>
+          <span class="lbt-stat-label">Satisfaction</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="lbt-marquee">
+    <div class="lbt-marquee-track">
+      <span class="lbt-marquee-item">Mariages</span>
+      <span class="lbt-marquee-item">Anniversaires</span>
+      <span class="lbt-marquee-item">Galas d'entreprise</span>
+      <span class="lbt-marquee-item">Baptêmes</span>
+      <span class="lbt-marquee-item">Cocktails</span>
+      <span class="lbt-marquee-item">Décoration florale</span>
+      <span class="lbt-marquee-item">Réveillons</span>
+      <span class="lbt-marquee-item">Mariages</span>
+      <span class="lbt-marquee-item">Anniversaires</span>
+      <span class="lbt-marquee-item">Galas d'entreprise</span>
+      <span class="lbt-marquee-item">Baptêmes</span>
+      <span class="lbt-marquee-item">Cocktails</span>
+      <span class="lbt-marquee-item">Décoration florale</span>
+      <span class="lbt-marquee-item">Réveillons</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section>
+    <div class="lbt-section">
+      <div class="lbt-about-grid">
+        <div class="lbt-about-img-wrap lbt-reveal">
+          <div class="lbt-about-img">
+            <div class="lbt-floral-scene">
+              <div class="lbt-flower-row">
+                <div class="lbt-flower wh" style="width:28px;height:28px"></div>
+                <div class="lbt-flower red" style="width:22px;height:22px"></div>
+                <div class="lbt-flower wh" style="width:18px;height:18px;opacity:0.5"></div>
+              </div>
+              <div class="lbt-flower-row" style="margin-top:12px">
+                <div class="lbt-flower pink" style="width:18px;height:18px;opacity:0.5"></div>
+                <div class="lbt-flower" style="width:32px;height:32px"></div>
+                <div class="lbt-flower red" style="width:22px;height:22px"></div>
+              </div>
+              <div class="lbt-flower-row" style="margin-top:12px">
+                <div class="lbt-flower wh" style="width:22px;height:22px;opacity:0.6"></div>
+                <div class="lbt-flower pink" style="width:28px;height:28px"></div>
+                <div class="lbt-flower" style="width:18px;height:18px;opacity:0.4"></div>
+              </div>
+            </div>
+          </div>
+          <div class="lbt-badge-exp">
+            <span class="lbt-badge-num">10+</span>
+            <span class="lbt-badge-text">Ans d'expérience</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="lbt-section-label lbt-reveal">Notre histoire</div>
+          <h2 class="lbt-section-title lbt-reveal lbt-reveal-delay-1">
+            L'art de créer<br>
+            des moments <em>magiques</em>
+          </h2>
+          <p class="lbt-about-body lbt-reveal lbt-reveal-delay-1">
+            Labantu Event est née d'une passion profonde pour la beauté et la célébration. Depuis plus de 10 ans, nous accompagnons nos clients dans la conception d'événements d'exception à travers le Cameroun et au-delà.
+          </p>
+          <p class="lbt-about-body lbt-reveal lbt-reveal-delay-2">
+            Notre vision : devenir la référence de l'événementiel africain en alliant tradition, modernité et excellence du service. Chaque projet est une œuvre d'art sur mesure.
+          </p>
+          <div class="lbt-about-feats lbt-reveal lbt-reveal-delay-2">
+            <div class="lbt-feat-item">
+              <span class="lbt-feat-text">Attention absolue aux détails</span>
+            </div>
+            <div class="lbt-feat-item">
+              <span class="lbt-feat-text">Équipe créative & réactive</span>
+            </div>
+            <div class="lbt-feat-item">
+              <span class="lbt-feat-text">Services entièrement sur mesure</span>
+            </div>
+            <div class="lbt-feat-item">
+              <span class="lbt-feat-text">Gestion de A à Z</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="lbt-gallery-section">
+    <div class="lbt-gallery-header">
+      <div>
+        <div class="lbt-section-label" style="color:rgba(201,168,76,0.7)">Nos créations</div>
+        <h2 class="lbt-gallery-title">Réalisations <em>uniques</em></h2>
+      </div>
+      <a href="https://www.tiktok.com/@labantu2021" target="_blank" class="lbt-gallery-link">
+        Voir plus sur TikTok →
+      </a>
+    </div>
+
+    <div class="lbt-gallery-grid">
+      <div class="lbt-gal-card">
+        <div class="lbt-gal-img event-1">
+          <div class="lbt-gal-deco">
+            <div class="lbt-gal-ring" style="top:30%;left:25%"></div>
+            <div class="lbt-gal-ring sm" style="top:50%;right:25%"></div>
+          </div>
+        </div>
+        <div class="lbt-gal-overlay">
+          <div class="lbt-gal-cat">Nouvel An</div>
+          <div class="lbt-gal-name">Réveillon Chic & Or</div>
+        </div>
+      </div>
+
+      <div class="lbt-gal-card">
+        <div class="lbt-gal-img event-2">
+          <div class="lbt-gal-deco">
+            <div class="lbt-gal-ring" style="opacity:0.5"></div>
+          </div>
+        </div>
+        <div class="lbt-gal-overlay">
+          <div class="lbt-gal-cat">Décoration de table</div>
+          <div class="lbt-gal-name">Élégance Florale Bleue</div>
+        </div>
+      </div>
+
+      <div class="lbt-gal-card">
+        <div class="lbt-gal-img event-3">
+          <div class="lbt-gal-deco">
+            <div class="lbt-gal-ring sm" style="right:20%;top:30%"></div>
+          </div>
+        </div>
+        <div class="lbt-gal-overlay">
+          <div class="lbt-gal-cat">Anniversaire</div>
+          <div class="lbt-gal-name">Passion Rouge</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="lbt-testi-section">
+    <div style="max-width:1100px;margin:0 auto">
+      <div style="text-align:center">
+        <div class="lbt-section-label lbt-reveal" style="display:inline-block">Avis clients</div>
+        <h2 class="lbt-section-title lbt-reveal lbt-reveal-delay-1" style="margin-bottom:0">Ils nous font <em>confiance</em></h2>
+      </div>
+
+      <div class="lbt-testi-grid">
+        <div class="lbt-testi-card lbt-reveal">
+          <div class="lbt-stars">
+            <div class="lbt-star"></div><div class="lbt-star"></div><div class="lbt-star"></div><div class="lbt-star"></div><div class="lbt-star"></div>
+          </div>
+          <span class="lbt-testi-quote">"</span>
+          <p class="lbt-testi-text">Labantu Event a transformé mon mariage en un conte de fées. Chaque détail était parfait, de la décoration au timing. Une équipe exceptionnelle !</p>
+          <div class="lbt-testi-name">Sarah M.</div>
+          <div class="lbt-testi-role">Mariée — Yaoundé</div>
+        </div>
+
+        <div class="lbt-testi-card lbt-reveal lbt-reveal-delay-1">
+          <div class="lbt-stars">
+            <div class="lbt-star"></div><div class="lbt-star"></div><div class="lbt-star"></div><div class="lbt-star"></div><div class="lbt-star"></div>
+          </div>
+          <span class="lbt-testi-quote">"</span>
+          <p class="lbt-testi-text">Professionnalisme exemplaire. Notre événement d'entreprise a été un franc succès grâce à leur équipe créative et réactive. Recommandé sans hésitation.</p>
+          <div class="lbt-testi-name">Jean-Paul K.</div>
+          <div class="lbt-testi-role">Directeur Marketing</div>
+        </div>
+
+        <div class="lbt-testi-card lbt-reveal lbt-reveal-delay-2">
+          <div class="lbt-stars">
+            <div class="lbt-star"></div><div class="lbt-star"></div><div class="lbt-star"></div><div class="lbt-star"></div><div class="lbt-star" style="opacity:0.3"></div>
+          </div>
+          <span class="lbt-testi-quote">"</span>
+          <p class="lbt-testi-text">Une organisation sans faille pour les 10 ans de ma fille. Les enfants étaient ravis et les parents impressionnés. On les garde pour les prochaines occasions !</p>
+          <div class="lbt-testi-name">Aminata D.</div>
+          <div class="lbt-testi-role">Maman d'anniversaire</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="lbt-contact-section">
+    <div>
+      <div class="lbt-section-label" style="color:rgba(201,168,76,0.7)">Nous joindre</div>
+      <h2 class="lbt-contact-title">Parlons de votre<br><em>prochain événement</em></h2>
+      <p class="lbt-contact-body">
+        Notre équipe est à votre écoute pour concevoir ensemble l'événement de vos rêves. Contactez-nous et recevez un devis personnalisé sous 24h.
+      </p>
+      <div class="lbt-contact-links">
+        <a href="https://www.tiktok.com/@labantu2021" target="_blank" class="lbt-contact-link">
+          <div class="lbt-contact-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:2px">TikTok</div>
+            <span>@labantu2021</span>
+          </div>
+        </a>
+        <a href="tel:+237000000000" class="lbt-contact-link">
+          <div class="lbt-contact-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:2px">Téléphone</div>
+            <span>+237 — Contactez-nous</span>
+          </div>
+        </a>
+        <div class="lbt-contact-link" style="cursor:default">
+          <div class="lbt-contact-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:2px">Localisation</div>
+            <span>Yaoundé, Cameroun</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lbt-contact-right">
+      <div class="lbt-contact-img-box">
+        <div class="lbt-img-sim ci1"></div>
+      </div>
+      <div class="lbt-contact-img-box">
+        <div class="lbt-img-sim ci2"></div>
+      </div>
+      <div class="lbt-contact-img-box">
+        <div class="lbt-img-sim ci3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="lbt-footer">
+    <div class="lbt-logo">
+      <div class="lbt-logo-mark">L</div>
+      <span class="lbt-logo-text" style="color:white">Labantu <span>Event</span></span>
+    </div>
+    <div class="lbt-footer-copy">© 2026 Labantu Event — Tous droits réservés.</div>
+    <div class="lbt-footer-links">
+      <a href="#">Accueil</a>
+      <a href="#">À propos</a>
+      <a href="#">Contact</a>
+    </div>
+  </footer>
+
+</div>
+
+<!-- MODAL -->
+<div class="lbt-modal-bg" id="modal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="lbt-modal">
+    <button class="lbt-modal-close" onclick="document.getElementById('modal').classList.remove('open')">✕</button>
+    <div class="lbt-modal-icon">📅</div>
+    <h3 class="lbt-modal-title">Réserver maintenant</h3>
+    <p class="lbt-modal-body">
+      Contactez-nous directement sur TikTok pour discuter de votre projet et recevoir un devis personnalisé sous 24h.
+    </p>
+    <a href="https://www.tiktok.com/@labantu2021" target="_blank" class="lbt-modal-cta">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+      Nous contacter sur TikTok
+    </a>
+    <p class="lbt-modal-sub">Labantu Event — Votre partenaire d'excellence</p>
+  </div>
+</div>
+
+<script>
+const revealEls = document.querySelectorAll('.lbt-reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => io.observe(el));
+</script>
