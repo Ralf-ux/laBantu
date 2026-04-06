@@ -70,7 +70,7 @@ const testimonials: Testimonial[] = [
     id: 1,
     name: "Sarah M.",
     role: "Mariée",
-    content: "Lubantu Event a transformé mon mariage en un conte de fées. Chaque détail était parfait, de la décoration au timing. Merci infiniment !",
+    content: "Labantu Event a transformé mon mariage en un conte de fées. Chaque détail était parfait, de la décoration au timing. Merci infiniment !",
     rating: 5
   },
   {
@@ -113,8 +113,8 @@ const Navbar = ({ onOpenModal }: { onOpenModal: () => void }) => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-nav py-3' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <img src="/IMG-20260328-WA0068.jpg" alt="Lubantu Event Logo" className="w-10 h-10 rounded-full object-cover" />
-          <span className="font-serif text-2xl font-bold tracking-tighter text-[#2C2C2C]">Lubantu <span className="text-[#D4AF37]">Event</span></span>
+          <img src="/IMG-20260328-WA0068.jpg" alt="Labantu Event Logo" className="w-10 h-10 rounded-full object-cover" />
+          <span className="font-serif text-2xl font-bold tracking-tighter text-[#2C2C2C]">Labantu <span className="text-[#D4AF37]">Event</span></span>
         </div>
 
         {/* Desktop Nav */}
@@ -203,7 +203,7 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => (
         transition={{ delay: 0.2 }}
         className="heading-serif mb-6"
       >
-        Bienvenue sur <span className="text-[#D4AF37]">Lubantu Event</span>
+        Bienvenue sur <span className="text-[#D4AF37]">Labantu Event</span>
       </motion.h1>
       <motion.p 
         initial={{ opacity: 0, y: 20 }}
@@ -254,7 +254,7 @@ const About = () => (
       <div>
         <h2 className="heading-serif mb-8">À propos de nous</h2>
         <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-          Lubantu Event est une plateforme spécialisée dans la planification et la gestion d’événements. 
+          Labantu Event est une plateforme spécialisée dans la planification et la gestion d’événements. 
           Nous accompagnons nos clients de la conception à la réalisation avec une attention particulière aux détails.
         </p>
         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -411,12 +411,12 @@ const Footer = () => (
   <footer className="bg-[#2C2C2C] text-white py-12 px-6">
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
       <div className="flex items-center gap-2">
-        <img src="/IMG-20260328-WA0068.jpg" alt="Lubantu Event Logo" className="w-8 h-8 rounded-full object-cover" />
-        <span className="font-serif text-xl font-bold tracking-tighter">Lubantu <span className="text-[#D4AF37]">Event</span></span>
+        <img src="/IMG-20260328-WA0068.jpg" alt="Labantu Event Logo" className="w-8 h-8 rounded-full object-cover" />
+        <span className="font-serif text-xl font-bold tracking-tighter">Labantu <span className="text-[#D4AF37]">Event</span></span>
       </div>
       
       <div className="text-sm text-gray-400">
-        © 2026 Lubantu Event. Tous droits réservés.
+        © 2026 Labantu Event. Tous droits réservés.
       </div>
       
       <div className="flex gap-6 text-sm font-medium">
@@ -479,7 +479,7 @@ const ReservationModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             </motion.a>
             
             <p className="mt-8 text-xs text-gray-400 uppercase tracking-widest">
-              Lubantu Event — Votre partenaire d'excellence
+              Labantu Event — Votre partenaire d'excellence
             </p>
           </motion.div>
         </div>
