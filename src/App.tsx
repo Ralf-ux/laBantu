@@ -54,24 +54,23 @@ const realizations: Realization[] = [
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Sarah M.",
-    role: "Mariée",
-    location: "Yaoundé",
-    content: "Labantu Event a transformé mon mariage en un conte de fées. Chaque détail était parfait, de la décoration au timing. Une équipe exceptionnelle !",
+    name: "Sophie L.",
+    role: "Cliente satisfaite",
+    content: "Labantu Event a transformé mon événement en un conte de fées. Chaque détail était parfait, de la décoration au timing. Une équipe exceptionnelle !",
     rating: 5
   },
   {
     id: 2,
-    name: "Jean-Paul K.",
-    role: "Directeur Marketing",
+    name: "Marc D.",
+    role: "Directeur entreprise",
     content: "Professionnalisme exemplaire. Notre événement d'entreprise a été un franc succès grâce à leur équipe créative et réactive. Recommandé sans hésitation.",
     rating: 5
   },
   {
     id: 3,
-    name: "Aminata D.",
-    role: "Maman d'anniversaire",
-    content: "Une organisation sans faille pour les 10 ans de ma fille. Les enfants étaient ravis et les parents impressionnés. On les garde pour les prochaines occasions !",
+    name: "Claire P.",
+    role: "Cliente",
+    content: "Une organisation sans faille pour mon événement. Les invités étaient ravis et impressionnés. Je les garde pour les prochaines occasions !",
     rating: 4
   }
 ];
@@ -236,16 +235,16 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => (
       
       <div className="absolute bottom-0 left-0 right-0 bg-[#1A1612]/85 backdrop-blur-xl py-5 px-6 flex justify-around border-t border-[#C9A84C]/30">
         <div className="text-center">
-          <span className="font-display text-2xl font-semibold text-[#E8C96A] block">10+</span>
-          <span className="text-[10px] text-white/45 tracking-wider uppercase">Années</span>
+          <span className="font-display text-2xl font-semibold text-[#E8C96A] block">4+</span>
+          <span className="text-[10px] text-white/45 tracking-wider uppercase">Ans</span>
         </div>
         <div className="text-center">
-          <span className="font-display text-2xl font-semibold text-[#E8C96A] block">500+</span>
-          <span className="text-[10px] text-white/45 tracking-wider uppercase">Événements</span>
+          <span className="font-display text-2xl font-semibold text-[#E8C96A] block">200+</span>
+          <span className="text-[10px] text-white/45 tracking-wider uppercase">Projets</span>
         </div>
         <div className="text-center">
           <span className="font-display text-2xl font-semibold text-[#E8C96A] block">100%</span>
-          <span className="text-[10px] text-white/45 tracking-wider uppercase">Satisfaction</span>
+          <span className="text-[10px] text-white/45 tracking-wider uppercase">Engagement</span>
         </div>
       </div>
     </div>
