@@ -35,19 +35,19 @@ const realizations: Realization[] = [
     id: 1,
     title: "Réveillon Chic & Or",
     category: "Nouvel An",
-    image: "/IMG-20260328-WA0070.jpg",
+    image: "/pexels-asadphoto-169191.jpg",
   },
   {
     id: 2,
     title: "Élégance Florale Bleue",
     category: "Décoration de Table",
-    image: "/IMG-20260328-WA0071.jpg",
+    image: "/pexels-leeloothefirst-5038739.jpg",
   },
   {
     id: 3,
     title: "Passion Rouge",
     category: "Anniversaire",
-    image: "/IMG-20260328-WA0072.jpg",
+    image: "/pexels-prince-nature-273406283-34389342.jpg",
   }
 ];
 
@@ -217,17 +217,19 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => (
       </div>
     </div>
 
-    <div className="md:w-1/2 relative min-h-[50vh] md:min-h-auto">
+      <div className="md:w-1/2 relative min-h-[50vh] md:min-h-auto">
       <div className="absolute inset-0 grid grid-rows-2">
-        <div className="relative bg-gradient-to-br from-[#3D2B1A] via-[#5C3D22] to-[#9A6940]">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,rgba(201,168,76,0.15)_0%,transparent_60%),radial-gradient(ellipse_at_80%_20%,rgba(255,255,255,0.05)_0%,transparent_50%)]"></div>
+        <div className="relative">
+          <img src="/pexels-dupriez-annick-22208966-6659504.jpg" alt="Mariage" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/30"></div>
           <div className="absolute bottom-5 left-6">
             <div className="text-[11px] tracking-[2px] uppercase text-[#C9A84C]/80 mb-1">Mariage</div>
             <div className="font-display text-xl text-white font-light">Salle de réception</div>
           </div>
         </div>
-        <div className="relative bg-gradient-to-br from-[#1E2832] via-[#2D3E52] to-[#4A5E78]">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,rgba(201,168,76,0.15)_0%,transparent_60%),radial-gradient(ellipse_at_80%_20%,rgba(255,255,255,0.05)_0%,transparent_50%)]"></div>
+        <div className="relative">
+          <img src="/pexels-mutecevvil-24023469.jpg" alt="Gala" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/30"></div>
           <div className="absolute bottom-5 left-6">
             <div className="text-[11px] tracking-[2px] uppercase text-[#C9A84C]/80 mb-1">Gala</div>
             <div className="font-display text-xl text-white font-light">Décoration de table</div>
@@ -270,8 +272,8 @@ const About = () => (
   <section id="about" className="section-padding bg-[#FAF8F3]">
     <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
       <div className="relative">
-        <div className="aspect-[4/5] rounded-sm overflow-hidden bg-gradient-to-br from-[#3B2A1A] via-[#5A4030] to-[#C9A84C]">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_40%_60%,rgba(201,168,76,0.25)_0%,transparent_70%),radial-gradient(ellipse_40%_40%_at_70%_30%,rgba(255,255,255,0.08)_0%,transparent_50%)]"></div>
+        <div className="aspect-[4/5] rounded-sm overflow-hidden">
+          <img src="/pexels-yankrukov-8866790.jpg" alt="Notre équipe" className="w-full h-full object-cover" />
         </div>
         <div className="absolute -bottom-5 -right-5 w-24 h-24 rounded-full bg-[#C9A84C] flex flex-col items-center justify-center shadow-lg">
           <span className="font-display text-3xl font-semibold text-[#1A1612] leading-none">10+</span>
@@ -435,10 +437,16 @@ const Contact = () => (
       </div>
 
       <div className="grid grid-cols-2 gap-2">
-        <div className="rounded-sm overflow-hidden min-h-[320px] bg-gradient-to-br from-[#1E2830] via-[#2A3B4C] to-[#5A8290]"></div>
+        <div className="rounded-sm overflow-hidden min-h-[320px]">
+          <img src="/pexels-imudruk-11985345.jpg" alt="Event" className="w-full h-full object-cover" />
+        </div>
         <div className="flex flex-col gap-2">
-          <div className="flex-1 rounded-sm overflow-hidden bg-gradient-to-br from-[#2A1E0E] via-[#5C3A1E] to-[#9A6830]"></div>
-          <div className="flex-1 rounded-sm overflow-hidden bg-gradient-to-br from-[#1A0E1A] via-[#3E1E3E] to-[#7A4A7A]"></div>
+          <div className="flex-1 rounded-sm overflow-hidden">
+            <img src="/pexels-bulat369-1243575272-33694037.jpg" alt="Event" className="w-full h-full object-cover" />
+          </div>
+          <div className="flex-1 rounded-sm overflow-hidden">
+            <img src="/pexels-rdne-6519888.jpg" alt="Event" className="w-full h-full object-cover" />
+          </div>
         </div>
       </div>
     </div>
