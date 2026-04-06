@@ -102,9 +102,6 @@ const Navbar = ({ onOpenModal }: { onOpenModal: () => void }) => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-nav py-3' : 'bg-[#FAF8F3]/90 backdrop-blur-xl py-4'}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-8 flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <div className="w-8 md:w-9 h-8 md:h-9 rounded-full bg-gradient-to-br from-[#C9A84C] to-[#E8C96A] flex items-center justify-center text-white font-semibold text-sm">
-            L
-          </div>
           <span className="font-display text-xl md:text-2xl font-semibold tracking-wide text-[#1A1612]">Labantu <span className="text-[#C9A84C]">Event</span></span>
         </div>
 
@@ -424,7 +421,7 @@ const Contact = () => (
             </div>
             <div>
               <div className="text-[11px] tracking-[1.5px] uppercase text-white/35 mb-0.5">Téléphone</div>
-              <span>Contactez-nous</span>
+              <span>+1 (343) 204-8382</span>
             </div>
           </div>
           <div className="flex items-center gap-4 text-white/70 text-sm">
@@ -433,7 +430,7 @@ const Contact = () => (
             </div>
             <div>
               <div className="text-[11px] tracking-[1.5px] uppercase text-white/35 mb-0.5">Localisation</div>
-              <span>Yaoundé, Cameroun</span>
+              <span>Canada</span>
             </div>
           </div>
         </div>
@@ -460,9 +457,6 @@ const Footer = () => (
   <footer className="bg-[#0E0C09] py-8 px-6 border-t border-[#C9A84C]/10">
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
       <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#C9A84C] to-[#E8C96A] flex items-center justify-center text-white font-semibold text-sm">
-          L
-        </div>
         <span className="font-display text-lg font-semibold text-white">Labantu <span className="text-[#C9A84C]">Event</span></span>
       </div>
       
