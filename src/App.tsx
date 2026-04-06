@@ -46,21 +46,21 @@ const realizations: Realization[] = [
     id: 1,
     title: "Réveillon Chic & Or",
     category: "Nouvel An",
-    image: "/asserts/pexels-rdne-6519888.jpg",
+    image: "/pexels-rdne-6519888.jpg",
     description: "Une table de fête sophistiquée en noir et or pour un passage à l'an nouveau mémorable."
   },
   {
     id: 2,
     title: "Élégance Florale Bleue",
     category: "Décoration de Table",
-    image: "/asserts/pexels-leeloothefirst-5038739.jpg",
+    image: "/pexels-leeloothefirst-5038739.jpg",
     description: "Harmonie de bleu et blanc avec des touches naturelles pour une réception raffinée."
   },
   {
     id: 3,
     title: "Anniversaire Passion Rouge",
     category: "Anniversaire",
-    image: "/asserts/pexels-asadphoto-169191.jpg",
+    image: "/pexels-asadphoto-169191.jpg",
     description: "Une ambiance romantique et festive avec des roses rouges et des ballons en cœur."
   }
 ];
@@ -113,7 +113,7 @@ const Navbar = ({ onOpenModal }: { onOpenModal: () => void }) => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-nav py-3' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <img src="/asserts/IMG-20260328-WA0068.jpg" alt="Lubantu Event Logo" className="w-10 h-10 rounded-full object-cover" />
+          <img src="/IMG-20260328-WA0068.jpg" alt="Lubantu Event Logo" className="w-10 h-10 rounded-full object-cover" />
           <span className="font-serif text-2xl font-bold tracking-tighter text-[#2C2C2C]">Lubantu <span className="text-[#D4AF37]">Event</span></span>
         </div>
 
@@ -240,7 +240,7 @@ const About = () => (
       <div className="relative">
         <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
           <img
-            src="/asserts/pexels-leeloothefirst-5038739.jpg"
+            src="/pexels-leeloothefirst-5038739.jpg"
             alt="Notre Équipe"
             className="w-full h-full object-cover"
           />
@@ -393,18 +393,18 @@ const Contact = () => (
         
         <div className="grid grid-cols-2 gap-4">
           <img
-            src="/asserts/pexels-dupriez-annick-22208966-6659504.jpg"
+            src="/pexels-dupriez-annick-22208966-6659504.jpg"
             alt="Contact Visual 1"
             className="rounded-3xl w-full h-full object-cover shadow-lg"
           />
           <div className="flex flex-col gap-4">
             <img
-              src="/asserts/pexels-mutecevvil-24023469.jpg"
+              src="/pexels-mutecevvil-24023469.jpg"
               alt="Contact Visual 2"
               className="rounded-3xl w-full h-full object-cover shadow-lg"
             />
             <img
-              src="/asserts/pexels-imudruk-11985345.jpg"
+              src="/pexels-imudruk-11985345.jpg"
               alt="Contact Visual 3"
               className="rounded-3xl w-full h-full object-cover shadow-lg"
             />
@@ -419,7 +419,7 @@ const Footer = () => (
   <footer className="bg-[#2C2C2C] text-white py-12 px-6">
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
       <div className="flex items-center gap-2">
-        <img src="/asserts/IMG-20260328-WA0068.jpg" alt="Lubantu Event Logo" className="w-8 h-8 rounded-full object-cover" />
+        <img src="/IMG-20260328-WA0068.jpg" alt="Lubantu Event Logo" className="w-8 h-8 rounded-full object-cover" />
         <span className="font-serif text-xl font-bold tracking-tighter">Lubantu <span className="text-[#D4AF37]">Event</span></span>
       </div>
       
