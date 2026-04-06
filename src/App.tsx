@@ -46,21 +46,21 @@ const realizations: Realization[] = [
     id: 1,
     title: "Réveillon Chic & Or",
     category: "Nouvel An",
-    image: "/pexels-rdne-6519888.jpg",
+    image: "/IMG-20260328-WA0070.jpg",
     description: "Une table de fête sophistiquée en noir et or pour un passage à l'an nouveau mémorable."
   },
   {
     id: 2,
     title: "Élégance Florale Bleue",
     category: "Décoration de Table",
-    image: "/pexels-leeloothefirst-5038739.jpg",
+    image: "/IMG-20260328-WA0071.jpg",
     description: "Harmonie de bleu et blanc avec des touches naturelles pour une réception raffinée."
   },
   {
     id: 3,
     title: "Anniversaire Passion Rouge",
     category: "Anniversaire",
-    image: "/pexels-asadphoto-169191.jpg",
+    image: "/IMG-20260328-WA0072.jpg",
     description: "Une ambiance romantique et festive avec des roses rouges et des ballons en cœur."
   }
 ];
@@ -181,7 +181,7 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => (
   <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
     <div className="absolute inset-0 z-0">
       <img 
-        src="https://picsum.photos/seed/event-hero/1920/1080" 
+        src="/pexels-prince-nature-273406283-34389342.jpg" 
         alt="Hero Background" 
         className="w-full h-full object-cover opacity-20"
         referrerPolicy="no-referrer"
