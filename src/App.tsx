@@ -35,19 +35,19 @@ const realizations: Realization[] = [
     id: 1,
     title: "Réveillon Chic & Or",
     category: "Nouvel An",
-    image: "/pexels-asadphoto-169191.jpg",
+    image: "/IMG-20260328-WA0070.jpg",
   },
   {
     id: 2,
     title: "Élégance Florale Bleue",
     category: "Décoration de Table",
-    image: "/pexels-leeloothefirst-5038739.jpg",
+    image: "/IMG-20260328-WA0071.jpg",
   },
   {
     id: 3,
     title: "Passion Rouge",
     category: "Anniversaire",
-    image: "/pexels-prince-nature-273406283-34389342.jpg",
+    image: "/IMG-20260328-WA0072.jpg",
   }
 ];
 
@@ -193,7 +193,7 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => (
           transition={{ delay: 0.2 }}
           className="text-[#8C8278] text-base leading-relaxed mb-10 max-w-sm"
         >
-          Labantu Event crée des expériences uniques et inoubliables — mariages, anniversaires, galas d'entreprise — avec une attention absolue aux détails.
+          Labantu Event crée des expériences uniques et inoubliables - mariages, anniversaires, galas d'entreprise - avec une attention absolue aux détails.
         </motion.p>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -276,8 +276,8 @@ const About = () => (
           <img src="/pexels-yankrukov-8866790.jpg" alt="Notre équipe" className="w-full h-full object-cover" />
         </div>
         <div className="absolute -bottom-5 -right-5 w-24 h-24 rounded-full bg-[#C9A84C] flex flex-col items-center justify-center shadow-lg">
-          <span className="font-display text-3xl font-semibold text-[#1A1612] leading-none">10+</span>
-          <span className="text-[9px] font-medium tracking-[1.5px] uppercase text-[#2E2820] text-center mt-0.5">Ans d'expérience</span>
+          <span className="font-display text-2xl font-semibold text-[#1A1612] leading-none">Since</span>
+          <span className="text-[9px] font-medium tracking-[1.5px] uppercase text-[#2E2820] text-center mt-0.5">2021</span>
         </div>
       </div>
       
@@ -286,11 +286,14 @@ const About = () => (
         <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-light text-[#1A1612] mb-8 leading-tight">
           L'art de créer des moments <em className="text-[#C9A84C] italic">magiques</em>
         </h2>
+        <div className="mb-8 rounded-sm overflow-hidden">
+          <img src="/pexels-prince-nature-273406283-34389342.jpg" alt="Notre histoire" className="w-full h-48 object-cover" />
+        </div>
         <p className="text-[#8C8278] text-base leading-relaxed mb-4">
-          Labantu Event est née d'une passion profonde pour la beauté et la célébration. Depuis plus de 10 ans, nous accompagnons nos clients dans la conception d'événements d'exception à travers le Cameroun et au-delà.
+          Labantu Event est née d'une passion profonde pour la beauté et la célébration. Depuis plus de 4 ans, nous accompagnons nos clients dans la conception d'événements d'exception en Europe.
         </p>
         <p className="text-[#8C8278] text-base leading-relaxed mb-8">
-          Notre vision : devenir la référence de l'événementiel africain en alliant tradition, modernité et excellence du service. Chaque projet est une œuvre d'art sur mesure.
+          Notre vision : devenir une référence dans l'événementiel en alliant tradition, modernité et excellence du service. Chaque projet est une œuvre d'art sur mesure.
         </p>
         
         <div className="grid grid-cols-2 gap-4">
@@ -384,7 +387,7 @@ const Testimonials = () => (
             <p className="text-[#8C8278] text-sm italic leading-relaxed mb-6">{t.content}</p>
             <div>
               <p className="font-medium text-[#1A1612] text-sm">{t.name}</p>
-              <p className="text-xs text-[#8C8278] tracking-wide">{t.role}{t.location ? ` — ${t.location}` : ''}</p>
+              <p className="text-xs text-[#8C8278] tracking-wide">{t.role}{t.location ? ` - ${t.location}` : ''}</p>
             </div>
           </motion.div>
         ))}
@@ -421,7 +424,7 @@ const Contact = () => (
             </div>
             <div>
               <div className="text-[11px] tracking-[1.5px] uppercase text-white/35 mb-0.5">Téléphone</div>
-              <span>+237 — Contactez-nous</span>
+              <span>Contactez-nous</span>
             </div>
           </div>
           <div className="flex items-center gap-4 text-white/70 text-sm">
@@ -438,14 +441,14 @@ const Contact = () => (
 
       <div className="grid grid-cols-2 gap-2">
         <div className="rounded-sm overflow-hidden min-h-[320px]">
-          <img src="/pexels-imudruk-11985345.jpg" alt="Event" className="w-full h-full object-cover" />
+          <img src="/IMG-20260328-WA0070.jpg" alt="Event" className="w-full h-full object-cover" />
         </div>
         <div className="flex flex-col gap-2">
           <div className="flex-1 rounded-sm overflow-hidden">
-            <img src="/pexels-bulat369-1243575272-33694037.jpg" alt="Event" className="w-full h-full object-cover" />
+            <img src="/IMG-20260328-WA0071.jpg" alt="Event" className="w-full h-full object-cover" />
           </div>
           <div className="flex-1 rounded-sm overflow-hidden">
-            <img src="/pexels-rdne-6519888.jpg" alt="Event" className="w-full h-full object-cover" />
+            <img src="/IMG-20260328-WA0072.jpg" alt="Event" className="w-full h-full object-cover" />
           </div>
         </div>
       </div>
@@ -464,7 +467,7 @@ const Footer = () => (
       </div>
       
       <div className="text-xs text-white/30 tracking-wide">
-        © 2026 Labantu Event — Tous droits réservés.
+        © 2026 Labantu Event - Tous droits réservés.
       </div>
       
       <div className="flex gap-6 text-xs text-white/30">
@@ -518,7 +521,7 @@ const ReservationModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             </motion.a>
             
             <p className="mt-4 text-[11px] text-[#8C8278] tracking-[1.5px] uppercase">
-              Labantu Event — Votre partenaire d'excellence
+              Labantu Event - Votre partenaire d'excellence
             </p>
           </motion.div>
         </div>
